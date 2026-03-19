@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 224 71% 4%;
+
+    --surface: 0 0% 100%;
+    --surface-foreground: 224 71% 4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 71% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71% 4%;
+
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 224 71% 4%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 210 20% 96%;
+    --accent-foreground: 224 71% 4%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
+
+    --radius: 0.5rem;
+
+    /* Status colors */
+    --status-pending-bg: 45 93% 94%;
+    --status-pending-text: 45 92% 35%;
+    --status-approved-bg: 142 76% 94%;
+    --status-approved-text: 142 71% 29%;
+    --status-rejected-bg: 0 84% 95%;
+    --status-rejected-text: 0 72% 45%;
+    --status-fulfilled-bg: 221 83% 95%;
+    --status-fulfilled-text: 221 83% 40%;
+    --status-review-bg: 262 83% 95%;
+    --status-review-text: 262 83% 40%;
+    --status-closed-bg: 210 20% 94%;
+    --status-closed-text: 215 16% 47%;
+
+    /* Shadows */
+    --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 2px -1px rgba(0, 0, 0, 0.03);
+    --shadow-elevated: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.03);
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 224 71% 4%;
+    --sidebar-primary: 221 83% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 20% 96%;
+    --sidebar-accent-foreground: 224 71% 4%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 221 83% 53%;
+
+    /* Priority */
+    --priority-high-bg: 0 84% 95%;
+    --priority-high-text: 0 72% 45%;
+    --priority-medium-bg: 45 93% 94%;
+    --priority-medium-text: 45 92% 35%;
+    --priority-low-bg: 210 20% 94%;
+    --priority-low-text: 215 16% 47%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .status-pending {
+    background-color: hsl(var(--status-pending-bg));
+    color: hsl(var(--status-pending-text));
+  }
+  .status-approved {
+    background-color: hsl(var(--status-approved-bg));
+    color: hsl(var(--status-approved-text));
+  }
+  .status-rejected {
+    background-color: hsl(var(--status-rejected-bg));
+    color: hsl(var(--status-rejected-text));
+  }
+  .status-fulfilled {
+    background-color: hsl(var(--status-fulfilled-bg));
+    color: hsl(var(--status-fulfilled-text));
+  }
+  .status-review {
+    background-color: hsl(var(--status-review-bg));
+    color: hsl(var(--status-review-text));
+  }
+  .status-closed {
+    background-color: hsl(var(--status-closed-bg));
+    color: hsl(var(--status-closed-text));
+  }
+  .priority-high {
+    background-color: hsl(var(--priority-high-bg));
+    color: hsl(var(--priority-high-text));
+  }
+  .priority-medium {
+    background-color: hsl(var(--priority-medium-bg));
+    color: hsl(var(--priority-medium-text));
+  }
+  .priority-low {
+    background-color: hsl(var(--priority-low-bg));
+    color: hsl(var(--priority-low-text));
+  }
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+  .press-effect {
+    @apply transition-transform duration-100;
+  }
+  .press-effect:active {
+    transform: scale(0.98);
+  }
+}
